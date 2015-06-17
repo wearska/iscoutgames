@@ -1,0 +1,66 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+.separator {
+    margin: 0.3rem;
+}
+
+.header {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-radius: 0px 0px 10px 10px;
+    height: 5rem;
+    background-color: #607D8B;
+    color: #CFD8DC;
+}
+
+.header div {
+    display: inline-block;
+}
+
+.navigation {
+    height: 100%;
+    float: left;
+}
+
+.nav-menu {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+}
+
+.nav-menu li {
+    display: inline;
+    padding-left: 1rem;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    font-size: 130%;
+    color: white;
+    font-weight: bold;
+}
+
+#account {
+    float: right;
+    color: white;
+}
+
+#account ul {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+}
+
+#account ul li {
+    display: inline;
+    padding-right: 1rem;
+}
+
+#account ul li a {
+    text-decoration: none;
+    color: white;
+}
