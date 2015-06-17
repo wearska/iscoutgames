@@ -1,0 +1,135 @@
+html {
+    font-family: "Roboto", "Noto", sans-serif;
+    font-size: 14px;
+    font-weight: $regular;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mono {
+    font-family: "Roboto Mono", "Roboto", "Noto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    font-size: 14px;
+    font-family: "Roboto", "Noto", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+.display4 {
+    font-family: "Roboto Mono", "Roboto", "Noto", sans-serif;
+    font-size: 112px;
+    font-weight: 300;
+    text-indent: -12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.display3 {
+    font-family: "Roboto Mono", "Roboto", "Noto", sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    text-indent: -4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.display2 {
+    font-family: "Roboto Mono", "Roboto", "Noto", sans-serif;
+    font-size: 45px;
+    line-height: 48px;
+    font-weight: 400;
+    text-indent: -4px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.display1 {
+    font-family: "Roboto Mono", "Roboto", "Noto", sans-serif;
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: $regular;
+    text-indent: -2px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.headline {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $regular;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.subhead {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.body2 {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.body1 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: $regular;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.caption {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+button {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+i {
+    color: rgba(0, 0, 0, 0.87);
+}

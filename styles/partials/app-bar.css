@@ -1,0 +1,158 @@
+#app-bar-wrapper {
+    position: relative;
+    height: 56px;
+    -webkit-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#app-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 4px;
+    overflow: hidden;
+    height: 56px;
+    line-height: 56px;
+    will-change: transform, height, color, background-color;
+    -webkit-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#app-bar i {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    margin: 4px 0;
+    text-align: center;
+}
+
+.app-navigation,
+.app-title,
+.app-view-title,
+.app-actions {
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 56px;
+    line-height: inherit;
+    background-color: inherit;
+}
+
+.app-navigation.app-bar-nav {
+    display: none;
+    float: right;
+    margin-left: -4px;
+}
+
+.app-navigation.app-bar-nav .nav-toggle {
+    display: none;
+}
+
+.app-navigation.app-bar-nav > nav {
+    position: relative;
+    width: auto;
+    max-width: none;
+    bottom: 0;
+    left: auto;
+}
+
+.app-navigation.app-bar-nav > nav ul.nav-list {
+    height: 56px;
+    line-height: 56px;
+}
+
+.app-navigation.app-bar-nav > nav ul.nav-list > li {
+    height: 56px;
+    line-height: 56px;
+}
+
+.app-title {
+    position: absolute;
+    padding: 0 8px;
+    max-width: calc(100% - 200px);
+}
+
+.app-actions {
+    float: right;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.app-actions .app-supplemental-actions,
+.app-actions .app-menu {
+    display: inline-block;
+    float: left;
+    height: 56px;
+    line-height: 56px;
+}
+
+.app-actions .app-supplemental-actions {
+    max-width: 96px;
+    overflow: hidden;
+}
+
+
+/*Coloured App Bar*/
+
+#app-bar-wrapper.colored,
+#app-bar-wrapper.colored * {
+    background-color: teal;
+}
+
+#app-bar-wrapper.colored .app-navigation.app-bar-nav .nav-list > .indicator {
+    background-color: #fff;
+}
+
+#app-bar-wrapper.colored .app-navigation.app-bar-nav .nav-list > li {
+    color: #fff;
+}
+
+#app-bar-wrapper.colored .app-navigation.app-bar-nav .nav-list > li.active {
+    color: #fff;
+}
+
+#app-bar-wrapper.extended {
+    height: 128px;
+}
+
+#app-bar-wrapper.extended #app-bar {
+    height: 128px;
+}
+
+#app-bar-wrapper.extended .app-navigation.app-bar-nav {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    float: left;
+    height: 56px;
+}
+
+
+/*Media Queries*/
+
+
+/*Tablets and up*/
+
+@media only screen and (min-width: 641px) {
+    #app-bar-wrapper {
+        height: 64px;
+    }
+    #app-bar {
+        height: 64px;
+        padding: 0 16px;
+    }
+    #app-bar i{
+        padding: 4px 0;
+    }
+    .app-navigation.app-bar-nav{
+        display: block;
+    }
+    .app-navigation, .app-title, .app-view-title, .app-actions {
+            height: 2 * $increment-keyline;
+        }
+    #app-bar-wrapper.extended .app-navigation.app-bar-nav {
+        height: 64px;
+        line-height: 64px;
+    }
+}

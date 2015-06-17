@@ -1,0 +1,91 @@
+.tabs-list {
+    position: relative;
+    overflow: hidden;
+    height: 48px;
+}
+
+.tabs-list li {
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    min-width: 72px;
+    max-width: 264px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "Roboto Mono", "Roboto", "Noto", sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.tabs-list .indicator {
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    left: 100%;
+    right: 100%;
+    background-color: teal;
+    will-change: transform, left, right;
+    -webkit-transition: left .18s ease, right .18s ease;
+    transition: left .18s ease, right .18s ease;
+}
+
+.tabs-list.colored {
+    background-color: teal;
+}
+
+.tabs-list.colored li,
+.tabs-list.colored i {
+    color: #fff;
+}
+
+.tabs-list.colored .indicator {
+    background-color: #fff;
+}
+
+.tab {
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    min-width: 72px;
+    max-width: 264px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "Roboto Mono", "Roboto", "Noto", sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.tab:after {
+    content: "";
+    width: auto;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.12);
+}
+
+.tab:hover:after {
+    left: 0;
+    right: 0;
+}
+
+.tab.active {
+    color: rgba(0, 0, 0, 0.87);
+}

@@ -1,0 +1,172 @@
+/*Aspect Rations -- use with wrappers*/
+
+
+/*2:1*/
+
+.ar_2-1 {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ar_2-1:after {
+    display: block;
+    content: '';
+    padding-top: 50%;
+    /* 2:1 ratio */
+}
+
+.ar_2-1 > img,
+.ar_2-1 > video {
+    position: absolute;
+    margin: auto;
+}
+
+.ar_2-1 > video {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+/*16:9*/
+
+.ar_16-9 {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ar_16-9:after {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+    /* 16:9 ratio */
+}
+
+.ar_16-9 > img,
+.ar_16-9 > video {
+    position: absolute;
+    margin: auto;
+}
+
+.ar_16-9 > video {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+/*3:2*/
+
+.ar_3-2 {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ar_3-2:after {
+    display: block;
+    content: '';
+    padding-top: 66.66%;
+    /* 3:2 ratio */
+}
+
+.ar_3-2 > img,
+.ar_3-2 > video {
+    position: absolute;
+    margin: auto;
+}
+
+.ar_3-2 > video {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+/*4:3*/
+
+.ar_4-3 {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ar_4-3:after {
+    display: block;
+    content: '';
+    padding-top: 75%;
+    /* 4:3 ratio */
+}
+
+.ar_4-3 > img,
+.ar_4-3 > video {
+    position: absolute;
+    margin: auto;
+}
+
+.ar_4-3 > video {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+/*1:1*/
+
+.ar_1-1 {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ar_1-1:after {
+    display: block;
+    content: '';
+    padding-top: 100%;
+    /* 1:1 ratio */
+}
+
+.ar_1-1 > img,
+.ar_1-1 > video {
+    position: absolute;
+    margin: auto;
+}
+
+.ar_1-1 > video {
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+/*Accesibility*/
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.lazy {
+    -webkit-filter: saturate(0);
+    filter: saturate(0);
+    opacity: 0;
+}
+
+.lazy.loaded {
+    -webkit-filter: saturate(1);
+    filter: saturate(1);
+    opacity: 1;
+    -webkit-transition: opacity .8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-filter .12s cubic-bezier(0.4, 0, 0.2, 1), opacity .8s cubic-bezier(0.4, 0, 0.2, 1), filter .12s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity .8s cubic-bezier(0.4, 0, 0.2, 1), filter .12s cubic-bezier(0.4, 0, 0.2, 1);
+}
