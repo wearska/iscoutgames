@@ -1,17 +1,14 @@
 <?php
-/**
- * The landing page.
- *
- * @iscoutgames.com
- */
-?>
-<?php
-    require_once 'header.php';
-?>
+  include 'route.php';
 
-<main class="bottom-sheet" id="view" data-nav-state-slug="home">
+  $route = new Route();
 
-
-<?php
-    require_once 'footer.php';
+  $route -> add('/');
+  $route -> add('/submit');
+  $route -> add('/gameslist');
+  $route -> add('/login');
+  $route -> add('/logout');
+  $route -> add('/signup');
+  $route -> add('/account');
+  $route->submit();
 ?>
