@@ -1,0 +1,14 @@
+.divider{
+	position:relative;
+	margin: 8px 0;
+	height: 1px;
+}
+.divider.full-bleed{
+    width: 100%;
+}
+.divider.left-inset{
+    margin-right: 72px;
+}
+.divider.right-inset{
+    margin-left: 72px;
+}

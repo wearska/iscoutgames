@@ -14,6 +14,8 @@
 @import "partials/helpers.css";
 @import "partials/global.css";
 @import "partials/base-styles.css";
+@import "partials/dividers.css";
+@import "partials/forms.css";
 @import "partials/elements.css";
 @import "partials/layout.css";
 @import "partials/list-tabs.css";
