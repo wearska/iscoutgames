@@ -5,9 +5,11 @@
 @import "normalize.css";
 
 /*Typography*/
+
 @import "partials/typography.css";
 
 /*Main*/
+
 @import "partials/animations.css";
 @import "partials/helpers.css";
 @import "partials/global.css";
@@ -17,8 +19,8 @@
 @import "partials/list-tabs.css";
 @import "partials/app-bar.css";
 
-
 /*Old stuff*/
+
 @import "partials/gamedetails.css";
 @import "partials/gameform.css";
 @import "partials/gamelist.css";

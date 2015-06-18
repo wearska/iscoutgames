@@ -1,9 +1,5 @@
-<?php
-    require_once 'v_header.php';
-?>
-<main class="bottom-sheet" id="view" data-nav-state-slug="home">
+<?php get_head(); ?>
 
-</main>
-<?php
-    require_once 'v_footer.php';
-?>
+    <main class="bottom-sheet" id="view" data-nav-state-slug="home">
+
+<?php get_foot(); ?>

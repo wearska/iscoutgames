@@ -1,4 +1,9 @@
 <?php
+session_start();
+?>
+
+<?php
+  include 'config.php';
   include 'route.php';
 
   $route = new Route();

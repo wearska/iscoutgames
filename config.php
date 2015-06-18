@@ -19,7 +19,7 @@ if (!defined('DB_HOST')) {
     define('DB_HOST', 'localhost');
 }
 
-// Database Charset to use in creating database tables. 
+// Database Charset to use in creating database tables.
 if (!defined('DB_CHARSET')) {
     define('DB_CHARSET', 'utf8');
 }
@@ -42,21 +42,21 @@ define( 'VIEWS', 'views/' );
 
 // Function to get the header
 function get_head() {  /*:)*/
-	require ( ABSPATH . 'header.php' );
+    require ( ABSPATH . 'header.php' );
 }
 
 // Function to get the footer
 function get_foot() {  /*:)*/
-	require_once ( ABSPATH . 'footer.php' );
+    require_once ( ABSPATH . 'footer.php' );
 }
 
 //function to load the styles
 function get_styles() {  /*:)*/
-	require_once ( ABSPATH . STYLES . 'styles.php' );
+    require_once ( ABSPATH . STYLES . 'styles.php' );
 }
 
 //function to load the styles
 function get_scripts() {  /*:)*/
-	require_once ( ABSPATH . SCRIPTS . 'scripts.php' );
+    require_once ( ABSPATH . SCRIPTS . 'scripts.php' );
 }
-?>
+ ?>

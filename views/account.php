@@ -1,5 +1,5 @@
-<?php require_once 'v_header.php' ?>
+<?php get_head(); ?>
 
-<main class="bottom-sheet" id="view"></main>
+    <main class="bottom-sheet" id="view"></main>
 
-<?php require_once 'v_v_footer.php' ?>
+<?php get_foot(); ?>
