@@ -208,6 +208,6 @@ $conn->close();
 
 {
 // To redirect form on a particular page
-header("Location:/");
+header("account");
 }
 ?>

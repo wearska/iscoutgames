@@ -6,7 +6,7 @@
         <h3> Submit a New Game </h3>
     </div>
 
-    <form id="gameform" action="/functions/gameformbe.php" method="post">
+    <form id="gameform" action="<?php echo get_base_uri() . 'functions/submitbe.php' ?>" method="post">
         <div id="gamedef">
             Name
             <input type="text" name="gamename" placeholder="Name of the game">

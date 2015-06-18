@@ -24,7 +24,7 @@ if($stmt = $conn->prepare($sql)) {
     if($stmt->fetch()) {
     echo "<div>" . "merge" . "</div>";
     session_start(); 
-    echo "<a href=/sessiontest.php>" . "Goto" . "</a>";
+    echo "<a href=sessiontest.php>" . "Goto" . "</a>";
 } else {
     echo "<div>" . "nu merge" . "</div>";
 };    

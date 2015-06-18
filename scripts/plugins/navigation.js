@@ -1,98 +1,54 @@
-/*jslint browser: true, devel: true */
-(function($, window, document) {
-  // The $ is now locally scoped
-  $(function() {
+(function(init) {
+    'use strict';
+    // The global jQuery object is passed as a parameter
+    init(window.jQuery, window, document);
 
-    // Functions
-    function startFn() {
-      "use strict";
-      console.log("fetching view");
-    }
+}(function($, window, document) {
+    'use strict';
+    // The $ is now locally scoped 
 
-    function errorFn(xhr, status, strErr) {
-      "use strict";
-      console.log("There was an error!");
-    }
+    // Listen for the jQuery ready event on the document
+    $(function() {
 
-    function successFn(result) {
-      "use strict";
-      var $view = $(result).filter("#view").children().get(0).innerHTML;
-      $("#view").empty();
-      $("#view").html($view);
-      /*var newUrl = $(result).filter("#view").attr("data-nav-state-slug");
-        window.history.pushState("", "", linkURL);*/
-      //var newHash = linkURL.replace("views/", "");
-      //window.location.hash = newHash;
-      console.log(result);
-    }
+        var $mainView = $("#view");
+        //The DOM is ready!
 
-    function getView($element) {
-      "use strict";
-      var linkURL = $element.attr("data-rel");
-      $.ajax({
-        // the URL for the request
-        url: linkURL,
+        function init() {
+            // Do this when a page loads.
+        };
 
-        // whether this is a POST or GET request
-        type: "GET",
+        function ajaxLoad(html) {
+            // Do this after ajax loads.
+        };
 
-        // function to call before we send the AJAX request
-        beforeSend: startFn,
+        function loadView(href) {
+            $mainView.load(href + " main>*", ajaxLoad);
+        };
 
-        // function to call for success
-        success: successFn,
+        init();
 
-        // function to call on an error
-        error: errorFn,
+        $(window).on("popstate", function(e) {
+            if (e.originalEvent.state !== null) {
+                var href = ($(location).attr('href') + ''),
+                    origin = ($(location).attr('origin') + '/iscoutgames/'),
+                    viewName = href.replace(origin, "");
+                href = viewName;
+                loadView(href);
+            }
+        });
 
-        // code to run regardless of success or failure
-        complete: function(xhr, status) {
-          //console.log("The request is complete!");
-        }
-      });
-    }
+        $(document).on("click", ".nav-list li", function() {
+            var $element = $(this),
+                href = $(this).attr("data-rel");
+            if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
+                history.pushState({}, '', href);
+                $mainView.load(href + " #view>*", ajaxLoad);
+                console.log($(this).attr("data-rel"));
+            }
+        });
 
-    function updateNav() {
-      "use strict";
-      var $appBarWrapper = $("div#app-bar-wrapper"),
-        $appBar = $appBarWrapper.find("#app-bar"),
-        $appBarExt = $appBarWrapper.find("#app-bar"),
-        appBarWrapperOffset = $appBarWrapper.outerHeight() - $appBar.outerHeight(),
-        perc = ($(window).scrollTop() / appBarWrapperOffset * 3) - 1;
-      if ($(window).scrollTop() > appBarWrapperOffset) {
-        $appBar.addClass("raised");
-      } else {
-        $appBar.removeClass("raised");
-      }
-    }
+    });
 
+    // The rest of code goes here!
 
-    // DOM ready!
-
-
-    //Variables
-    var $document = $(document),
-      $window = $(window),
-      $body = $("body"),
-      $appBarWrapper = $("div#app-bar-wrapper"),
-      $appBar = $appBarWrapper.find("#app-bar"),
-      $appNav = $("div.app-navigation"),
-      $newAppNav = $appNav.clone(),
-      i = 1;
-
-
-
-    // Initial setup
-    $("ul.nav-list").tabs();
-
-
-    // Event delegation
-    // $(document).on("click", ".nav-list li", function() {
-    //   var $element = $(this);
-    //   getView($element);
-    // });
-
-    $window.on("scroll", updateNav);
-  });
-
-}(jQuery, window, document));
+}));

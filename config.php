@@ -40,6 +40,14 @@ define( 'SCRIPTS', 'scripts/' );
 define( 'STYLES', 'styles/' );
 define( 'VIEWS', 'views/' );
 
+// Get root uri
+
+
+function get_base_uri() {
+    $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+    return $uri = str_replace('index.php', '', $root);
+}
+
 // Function to get the header
 function get_head() {  /*:)*/
     require ( ABSPATH . 'header.php' );

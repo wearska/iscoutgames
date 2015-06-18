@@ -54,15 +54,15 @@
                      </div>
                      <nav role="navigation">
                          <ul class="tabs-list nav-list">
-                             <li class="tab" data-title="Home" data-rel="views/home.php"><a href="">Home</a></li>
-                             <li class="tab active" data-title="Submit" data-rel="views/submit.php"><a href="submit">Submit</a></li>
-                             <li class="tab" data-title="Games List" data-rel="views/gameslist.php"><a href="gameslist">Games List</a></li>
+                             <li class="tab" id="home" data-title="Home" data-rel="home">Home</li>
+                             <li class="tab" id="submit" data-title="Submit" data-rel="submit">Submit</li>
+                             <li class="tab" id="gameslist" data-title="Games List" data-rel="gameslist">Games List</li>
                              <?php if(!empty($_SESSION[ 'LoggedIn']) && !empty($_SESSION[ 'Username'])) { ?>
-                             <li class="tab" data-title="Log In" data-rel="views/account.php"><a href="login">Account</a></li>
-                             <li class="tab" data-title="Sign Up" data-rel="views/logout.php"><a href>Log out</li>
+                             <li class="tab" id="account" data-title="Log In" data-rel="account">Account</li>
+                             <li class="tab" id="logout" data-title="Sign Up" data-rel="logout">Log out</li>
                              <?php } else { ?>
-                             <li class="tab" data-title="Log In" data-rel="views/login.php">Log In</li>
-                             <li class="tab" data-title="Sign Up" data-rel="views/signup.php">Sign Up</li>
+                             <li class="tab" id="login" data-title="Log In" data-rel="login">Log In</li>
+                             <li class="tab" id="signup" data-title="Sign Up" data-rel="signup">Sign Up</li>
                              <?php } ?>
                              <div class="indicator"></div>
                          </ul>
@@ -72,7 +72,3 @@
          </div>
      </header>
 
-
-
-     <!--Main view-->
-     <main class="bottom-sheet" id="view" style="height:1500px">

@@ -3,7 +3,7 @@
 <main class="bottom-sheet" id="view">
 
 <?php
-include "../functions/base.php";
+include (ABSPATH . FUNC . "base.php");
 ?>
 
 <div style="border: 1px solid black; padding: 5px; margin: 10px; height: 500px">
@@ -35,12 +35,12 @@ if($result->num_rows == 1)
 
     echo "<h1>Success</h1>";
     echo "<p>We are now redirecting you to the member area.</p>";
-    echo "<meta http-equiv='refresh' content=1;index.php />";
+    echo "<meta http-equiv='refresh' content=1;index />";
 }
 else
 {
     echo "<h1>Error</h1>";
-    echo "<p>Sorry, your account could not be found. Please <a href=\"login.php\">click here to try again</a>.</p>";
+    echo "<p>Sorry, your account could not be found. Please <a href='". get_base_uri() . "login'>click here to try again</a>.</p>";
 }
 }
 else
@@ -51,7 +51,7 @@ else
 
 <p>Thanks for visiting! Please either login below.</p>
 
-<form method="post" action="login.php" name="loginform" id="loginform">
+<form method="post" action="" name="loginform" id="loginform">
 <fieldset>
     <label for="username">Username:</label><input type="text" name="username" id="username" /><br />
     <label for="password">Password:</label><input type="password" name="password" id="password" /><br />

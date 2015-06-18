@@ -2,7 +2,7 @@
 
     <main class="bottom-sheet" id="view">
         <div style="border: 1px solid black; padding: 5px; margin: 10px; height: 500px">
-            <form id="signup" action="../functions/signupbe.php" method="post">
+            <form id="signup" action="<?php echo get_base_uri() . 'functions/signupbe.php' ?>" method="post">
 
                 <input type="text" name="username" placeholder="Username">
                 <br>
