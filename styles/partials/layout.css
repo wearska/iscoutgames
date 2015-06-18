@@ -1,10 +1,12 @@
 /*Main View*/
 
-#main-view {
+#view {
     margin: 0 auto;
     width: 80%;
     padding: 16px;
 }
+
+
 /*Header*/
 
 header.site-header {
@@ -12,4 +14,11 @@ header.site-header {
     top: 0;
     left: 0;
     z-index: 10000;
+}
+
+
+/*Bottom Sheet*/
+
+.bottom-sheet {
+
 }

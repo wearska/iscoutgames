@@ -95,20 +95,21 @@
 
 /*Coloured App Bar*/
 
-#app-bar-wrapper.colored,
-#app-bar-wrapper.colored * {
+#app-bar-wrapper.coloured,
+#app-bar-wrapper.coloured * {
     background-color: teal;
 }
 
-#app-bar-wrapper.colored .app-navigation.app-bar-nav .nav-list > .indicator {
+#app-bar-wrapper.coloured .app-navigation.app-bar-nav .nav-list > .indicator {
     background-color: #fff;
 }
-
-#app-bar-wrapper.colored .app-navigation.app-bar-nav .nav-list > li {
+#app-bar-wrapper.coloured .app-title,
+#app-bar-wrapper.coloured i,
+#app-bar-wrapper.coloured .app-navigation.app-bar-nav .nav-list > li {
     color: #fff;
 }
 
-#app-bar-wrapper.colored .app-navigation.app-bar-nav .nav-list > li.active {
+#app-bar-wrapper.coloured .app-navigation.app-bar-nav .nav-list > li.active {
     color: #fff;
 }
 
@@ -126,6 +127,7 @@
     transform: translateY(100%);
     float: left;
     height: 56px;
+    margin-left: -12px;
 }
 
 
@@ -142,15 +144,33 @@
         height: 64px;
         padding: 0 16px;
     }
-    #app-bar i{
+    #app-bar i {
         padding: 4px 0;
     }
-    .app-navigation.app-bar-nav{
+    .app-navigation.app-bar-nav {
         display: block;
     }
-    .app-navigation, .app-title, .app-view-title, .app-actions {
-            height: 2 * $increment-keyline;
-        }
+    .app-navigation,
+    .app-title,
+    .app-actions {
+        height: 64px;
+    }
+    .app-navigation.app-bar-nav > nav ul.nav-list {
+        height: 64px;
+        line-height: 64px;
+    }
+    .app-navigation.app-bar-nav > nav ul.nav-list > li {
+        height: 64px;
+        line-height: 64px;
+    }
+    .app-title {
+        line-height: 64px;
+    }
+    .app-actions .app-supplemental-actions,
+    .app-actions .app-menu {
+        height: 64px;
+        line-height: 64px;
+    }
     #app-bar-wrapper.extended .app-navigation.app-bar-nav {
         height: 64px;
         line-height: 64px;

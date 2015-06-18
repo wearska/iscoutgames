@@ -1,32 +1,6 @@
-<?php
-session_start();
-?>
+<?php require_once 'v_header.php' ?>
 
-<!doctype HTML>
-<html>
-
-<head>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="CSS/normalize.css" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="CSS/jquery-ui.css" />
-    <link type="text/css" rel="stylesheet" href="CSS/index.css" />
-    <link type="text/css" rel="stylesheet" href="CSS/gamelist.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-
-<body>
-    <div class="header">
-        <div class="logo"></div>
-        <div class="navigation">
-            <ul class="nav-menu">
-                <li> <a href="/"> Home </a></li>
-                <li> <a href="gameform.php"> Submit Game </a> </li>
-                <li> <a href="gamelist.php"> Game List </a> </li>            
-            </ul>        
-        </div>
+    <main class="bottom-sheet" id="view" data-nav-state-slug="gamelist">
         <div id="account">
             <ul>
                 <?php
@@ -44,7 +18,7 @@ session_start();
     <hr class="separator">
     <div style="margin-left:15px">
         <table class="gametable">
-            <tr id="header">
+            <tr id="v_header">
                 <td> Game Name</td>
                 <td> Genre </td>
                 <td> Score </td>
@@ -71,7 +45,7 @@ if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
          echo "<tr>"
-                    ."<td>"."<a href='gamedetails.php?ID=$row[ID]'>".$row["Name"]."</a>"."</td>"
+                    ."<td>"."<a href='single-game.php?ID=$row[ID]'>".$row["Name"]."</a>"."</td>"
                     ."<td>" . $row["Genre"]. "</td>"
                     ."<td>" . $row["Score"]. "</td>"
                     ."<td>" . "<a href=$row[Link] target=_blank>" . $row["Link"] . "</a>" . "</td>"
@@ -86,12 +60,6 @@ $conn->close();
         
         </table>
     </div>
+</main>
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="JS/jquery-ui.js"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
-    <script src="JS/main.js"></script>
-</body>
-
-</html>
+<?php require_once 'v_footer.php' ?>

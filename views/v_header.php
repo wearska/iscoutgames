@@ -28,11 +28,11 @@ session_start();
     <link href='http://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300,300italic,400italic,500italic,500,700italic,700|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     
     <!--CSS-->    
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
     
     <!--Modernizr-->
-    <script src="scripts/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../scripts/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
