@@ -1,0 +1,126 @@
+// Header
+header {
+        &.site-header {
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: 10000;
+        }
+}
+
+// Footer
+footer {
+
+}
+
+// Main View
+main#view {
+        max-width: 1280px;
+        margin: 0 auto;
+}
+
+// Base grid
+.container {
+        padding: 0 $content-padding;
+        margin: 0 auto;
+        width: 90%;
+}
+@media #{$medium-and-up} {
+        .container {
+                width: 85%;
+        }
+}
+@media #{$large-and-up} {
+        .container {
+                width: 70%;
+        }
+}
+.container .row {
+        margin-left: (-1 * $vertical-sizing);
+        margin-right: (-1 * $vertical-sizing);
+}
+.section {
+        padding-top: $base-grid;
+        padding-bottom: $base-grid;
+        &.no-pad {
+                padding: 0;
+        }
+        &.no-pad-bot {
+                padding-bottom: 0;
+        }
+        &.no-pad-top {
+                padding-top: 0;
+        }
+}
+.row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: $vertical-sizing;
+
+        // Clear floating children
+        &:after {
+                content: "";
+                display: table;
+                clear: both;
+        }
+        .col {
+                float: left;
+                box-sizing: border-box;
+                padding: 0 $vertical-sizing;
+                $i: 1;
+                @while $i <= 12 {
+                        $perc: unquote((100 / (12 / $i)) + "%");
+                        &.s#{$i} {
+                                width: $perc;
+                                margin-left: 0;
+                        }
+                        $i: $i + 1;
+                }
+                $i: 1;
+                @while $i <= 12 {
+                        $perc: unquote((100 / (12 / $i)) + "%");
+                        &.offset-s#{$i} {
+                                margin-left: $perc;
+                        }
+                        $i: $i + 1;
+                }
+                @media #{$medium-and-up} {
+                        $i: 1;
+                        @while $i <= 12 {
+                                $perc: unquote((100 / (12 / $i)) + "%");
+                                &.m#{$i} {
+                                        width: $perc;
+                                        margin-left: 0;
+                                }
+                                $i: $i + 1;
+                        }
+                        $i: 1;
+                        @while $i <= 12 {
+                                $perc: unquote((100 / (12 / $i)) + "%");
+                                &.offset-m#{$i} {
+                                        margin-left: $perc;
+                                }
+                                $i: $i + 1;
+                        }
+                }
+                @media #{$large-and-up} {
+                        $i: 1;
+                        @while $i <= 12 {
+                                $perc: unquote((100 / (12 / $i)) + "%");
+                                &.l#{$i} {
+                                        width: $perc;
+                                        margin-left: 0;
+                                }
+                                $i: $i + 1;
+                        }
+                        $i: 1;
+                        @while $i <= 12 {
+                                $perc: unquote((100 / (12 / $i)) + "%");
+                                &.offset-l#{$i} {
+                                        margin-left: $perc;
+                                }
+                                $i: $i + 1;
+                        }
+                }
+        }
+}

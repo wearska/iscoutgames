@@ -5,3 +5,8 @@ bower_components/
 build/
 dist/
 test/
+.ftpsync_settings
+.remotesettings
+.remote-sync.json
+gulp_ftpsync.json
+deploy/

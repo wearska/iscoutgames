@@ -16,5 +16,6 @@ session_start();
   $route -> add('logout');
   $route -> add('signup');
   $route -> add('account');
+  $route -> add('tests');
   $route->submit();
 ?>

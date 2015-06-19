@@ -5,7 +5,9 @@
 
 }(function($, window, document) {
     'use strict';
-    // The $ is now locally scoped 
+    // The $ is now locally scoped
+
+    var $appbar = $('#app-bar-wrapper');
 
     // Listen for the jQuery ready event on the document
     $(function() {
@@ -21,7 +23,29 @@
 
         // The DOM is ready!
 
+        $(".theme-switch").on("click", changeTheme);
+        $(".extend-appbar").on("click", extendAppbar);
+        $(".extend-special").on("click", specialAppbar);
+        $(".color-appbar").on("click", colorAppbar);
+
+
     });
+
+    function changeTheme() {
+        $("body").toggleClass("light-theme dark-theme");
+    };
+
+    function extendAppbar() {
+        $appbar.toggleClass("extended");
+    };
+
+    function specialAppbar() {
+        $appbar.toggleClass("special");
+    };
+
+    function colorAppbar() {
+        $appbar.toggleClass("colored");
+    };
 
 
     // The rest of code goes here!

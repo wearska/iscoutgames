@@ -13,7 +13,7 @@
 @import "partials/animations.css";
 @import "partials/helpers.css";
 @import "partials/global.css";
-@import "partials/base-styles.css";
+@import "partials/structure.css";
 @import "partials/dividers.css";
 @import "partials/forms.css";
 @import "partials/elements.css";
@@ -21,6 +21,7 @@
 @import "partials/list-tabs.css";
 @import "partials/app-bar.css";
 
+@import "partials/base-styles.css";
 /*Old stuff*/
 
 @import "partials/gamedetails.css";

@@ -52,3 +52,22 @@ body {
 .brand-bg{
     background-color: teal;
 }
+.coloured{
+    background-color: teal;
+    color: white;
+}
+
+.coloured * {
+    background-color: teal;
+}
+
+.coloured h1,
+.coloured h2,
+.coloured h3,
+.coloured h4,
+.coloured h5,
+.coloured h6,
+.coloured span,
+.coloured p{
+    color: white;
+}
