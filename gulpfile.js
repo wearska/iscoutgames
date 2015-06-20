@@ -5,10 +5,8 @@ var gulp = require("gulp"), //http://gulpjs.com/
 	minifycss = require("gulp-minify-css"), //https://www.npmjs.org/package/gulp-minify-css
 	rename = require("gulp-rename"), //https://www.npmjs.org/package/gulp-rename
 	changed = require("gulp-changed"),
-	concatCss = require('gulp-concat-css'),
 	ftp = require("vinyl-ftp"),
-	ftpAuth = require("./gulp_ftpsync.json"),
-	runSequence = require('run-sequence'),
+	ftpAuth = require("./deploy_auth.json"),
 	log = util.log;
 
 var sassFiles = "styles/main.scss";

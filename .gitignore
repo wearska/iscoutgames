@@ -9,4 +9,5 @@ test/
 .remotesettings
 .remote-sync.json
 gulp_ftpsync.json
+deploy_auth.json
 deploy/

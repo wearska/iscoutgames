@@ -34,6 +34,7 @@
 
         function ajaxLoad(html) {
             // Do this after ajax loads.
+            $.ready();
         };
 
         function loadView(href) {

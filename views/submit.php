@@ -10,6 +10,16 @@
         <div id="gamedef">
             Name
             <input type="text" name="gamename" placeholder="Name of the game">
+            <div class="row">
+                <div class="input-field floating-label col s6">
+                    <input type="text"  name="gamename" placeholder="" id="gamename">
+                    <label for="second">Name of the game</label>
+                </div>                
+                <div class="input-field floating-label col s6">
+                    <input type="text" name="link" id="link">
+                    <label for="second">Link to game page</label>
+                </div>                
+            </div>
             <br>
             <br> Genre
             <select name="genre">
