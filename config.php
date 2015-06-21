@@ -7,7 +7,7 @@
 
 // Global DB config
 if (!defined('DB_NAME')) {
-    define('DB_NAME', 'iscoutgames');
+    define('DB_NAME', 'games');
 }
 if (!defined('DB_USER')) {
     define('DB_USER', 'root');
@@ -23,6 +23,7 @@ if (!defined('DB_HOST')) {
 if (!defined('DB_CHARSET')) {
     define('DB_CHARSET', 'utf8');
 }
+
 
 // The Database Collate type. Don't change this if in doubt.
 if (!defined('DB_COLLATE')) {

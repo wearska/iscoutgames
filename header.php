@@ -51,6 +51,13 @@
                                  <li class="tab" id ="gameslist" data-title="Games List" data-view-link="gameslist">Games List</li>
                                  <li class="tab" id ="news" data-title="News" data-view-link="news">News</li>
                                  <li class="tab" id ="tests" data-title="Tests" data-view-link="tests">Tests</li>
+                                  <?php if(!empty($_SESSION[ 'LoggedIn']) && !empty($_SESSION[ 'Username'])) { ?>
+                                 <li class="tab" id="account" data-title="Log In" data-view-link="account">Account</li>
+                                 <li class="tab" id="logout" data-title="Sign Up" data-view-link="logout">Log out</li>
+                                 <?php } else { ?>
+                                 <li class="tab" id="login" data-title="Log In" data-view-link="login">Log In</li>
+                                 <li class="tab" id="signup" data-title="Sign Up" data-view-link="signup">Sign Up</li>
+                                 <?php } ?>
                                  <div class="indicator"></div>
                              </ul>
                          </nav>

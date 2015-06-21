@@ -1,4 +1,6 @@
-<?php get_head(); ?>
+<?php get_head();
+include (ABSPATH . FUNC . 'base.php');
+?>
 
     <main class="bottom-sheet" id="view"></main>
 

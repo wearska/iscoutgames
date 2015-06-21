@@ -1,10 +1,9 @@
-<?php get_head(); ?>
+<?php get_head();
+include (ABSPATH . FUNC . 'base.php');
+?>
 
 <main class="bottom-sheet" id="view">
 
-<?php
-include (ABSPATH . FUNC . "base.php");
-?>
 
 <div style="border: 1px solid black; padding: 5px; margin: 10px; height: 500px">
     <div>
@@ -26,7 +25,7 @@ $password = $conn->real_escape_string($_POST['password']);
 
 $checklogin = "SELECT * FROM `users` WHERE Username = '$username' AND Password = '$password'";
 $result = $conn->query($checklogin);
-if($result->num_rows == 1)
+if($result->num_rows !== 0)
 {
     $row = $result->fetch_assoc();
 
@@ -35,7 +34,7 @@ if($result->num_rows == 1)
 
     echo "<h1>Success</h1>";
     echo "<p>We are now redirecting you to the member area.</p>";
-    echo "<meta http-equiv='refresh' content=1;  />";
+    echo "<meta http-equiv='refresh' content='2;home'>";
 }
 else
 {
@@ -62,17 +61,6 @@ else
 <?php
 }
 ?>
-
-        <!--<form id="signup" action="loginbe.php" method="post">
-
-            <input type="text" name="username" placeholder="Username">
-            <br>
-            <br>
-            <input type="password" name="password" placeholder="Password">
-            <br>
-            <br>
-            <input type="submit" value="Login" id="testbutton"> </form>
-        </form> -->
     </div>
 </div>
 

@@ -74,11 +74,11 @@
             }
         });
 
-        $(document).on("click", "[data-view-link]", function() {
+        $(document).on("click", "#gamelink", function() {
             var $element = $(this),
-                href = $(this).attr("data-view-link");
+                href = $(this).attr("#gamelink");
             if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
-                //window.location.hash = href;
+                window.location.hash = href;
                 history.pushState({}, '', href);
                 $mainView.load(href + " #view>*", ajaxLoad);
             }

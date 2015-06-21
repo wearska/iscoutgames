@@ -2,7 +2,7 @@ $(document).ready(function () {
 // Variable to hold request
 var request;
 
-// Bind to the submit event of our form
+/*// Bind to the submit event of our form
 $("#gameform").submit(function(event){
 
     // Abort any pending request
@@ -56,7 +56,7 @@ $("#gameform").submit(function(event){
 
     // Prevent default posting of form
     event.preventDefault();
-});
+});*/
     
     $("#mpoptions").children().prop('disabled',true);
     

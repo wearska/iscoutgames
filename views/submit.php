@@ -1,4 +1,6 @@
-<?php get_head(); ?>
+<?php get_head();
+include (ABSPATH . FUNC . 'base.php');
+?>
 
 <main class="bottom-sheet" id="view">
 
@@ -13,7 +15,7 @@
             <div class="row">
                 <div class="input-field floating-label col s6">
                     <input type="text"  name="gamename" placeholder="" id="gamename">
-                    <label for="second">Name of the game</label>
+                    <label for="gamename">Name of the game</label>
                 </div>                
                 <div class="input-field floating-label col s6">
                     <input type="text" name="link" id="link">
