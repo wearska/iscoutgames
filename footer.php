@@ -27,6 +27,7 @@
     </script>
     <script src="scripts/plugins/tab-lists.js"></script>
     <script src="scripts/plugins/navigation.js"></script>
+    <script src="scripts/plugins/nav-games.js"></script>
     <script src="scripts/plugins.js"></script>
     <script src="scripts/main.js"></script>
 

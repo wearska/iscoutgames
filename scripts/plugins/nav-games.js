@@ -9,23 +9,8 @@
 
     // Listen for the jQuery ready event on the document
     $(function() {
-        var $document = $(document),
-            $window = $(window),
-            $body = $("body"),
-            $appBarWrapper = $("div#app-bar-wrapper"),
-            $appBarMain = $appBarWrapper.find("#app-bar-main"),
-            $appBarExt = $appBarWrapper.find("#app-bar-extension"),
-            $appViewTitle = $appBarExt.find(".app-view-title"),
-            $appNav = $("div.app-navigation"),
-            $newAppNav = $appNav.clone(),
-            i = 1;
-
-        $appNav.addClass("app-bar-nav");
-        $newAppNav.addClass("app-bar-nav");
-        $newAppNav.appendTo($appNav.parent());
-        $appNav.remove();
-
         var $mainView = $("#view");
+        var $holder = $("<div class='holder'></div>");
         //The DOM is ready!
 
         function init() {
@@ -34,56 +19,33 @@
 
         function ajaxLoad(html) {
             // Do this after ajax loads.
+            $mainView.append($holder);
         };
 
         function loadView(href) {
             $mainView.load(href + " main>*", ajaxLoad);
         };
 
-        function updateNav() {
-            var $appBarWrapper = $("div#app-bar-wrapper"),
-                $appBarMain = $appBarWrapper.find("#app-bar-main"),
-                $appBarExt = $appBarWrapper.find("#app-bar-extension"),
-                $appViewTitle = $appBarExt.find(".app-view-title"),
-                appBarWrapperOffset = $appBarWrapper.outerHeight() - $appBarMain.outerHeight(),
-                perc = ($(window).scrollTop() / appBarWrapperOffset * 3) - 1;
-            if ($(window).scrollTop() > appBarWrapperOffset) {
-                $appBarMain.addClass("raised");
-            } else {
-                $appBarMain.removeClass("raised");
-                if (perc >= -1) {
-                    while (perc > 0) {
-                        perc = 0;
-                    }
-                    perc = Math.abs(perc);
-                    $appViewTitle.css("opacity", perc);
-
-                }
-            }
-        }
 
         init();
 
-        $(window).on("popstate", function(e) {
+        $(window).on("hashchange", function(e) {
             if (e.originalEvent.state !== null) {
-                var href = ($(location).attr('href') + ''),
-                    origin = ($(location).attr('origin') + '/iscoutgames/'),
-                    viewName = href.replace(origin, "");
-                href = viewName;
-                loadView(href);
+                var hash;
+                //(window.location.hash) ? (hash = window.location.hash.substring(1), alert(hash)) : alert("no hash");
             }
         });
 
-        $(document).on("click", "#gamelink", function() {
-            var $element = $(this),
-                href = $(this).attr("#gamelink");
+        $(document).on("click", "a", function(e) {
+            var $this = $(this),
+                href = $this.attr("href"),
+                dataSlug = $this.attr("data-slug");
             if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
-                window.location.hash = href;
-                history.pushState({}, '', href);
-                $mainView.load(href + " #view>*", ajaxLoad);
+                $holder.load(href + " #view>*", ajaxLoad);
+                window.location.hash =  dataSlug;
             }
+            e.preventDefault();
         });
-        $window.on("scroll", updateNav);
 
     });
 

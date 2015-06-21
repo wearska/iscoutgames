@@ -21,7 +21,6 @@ gulp.task("sass", function () {
 			style: "expanded"
 		}))
 		.pipe(autoprefixer("last 3 version", "safari 5", "ie 8", "ie 9"))
-		.pipe(gulp.dest(""))
 		.pipe(rename({
 			suffix: ".min"
 		}))

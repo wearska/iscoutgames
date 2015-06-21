@@ -112,7 +112,7 @@ session_start();
         // output data of each row
         $row = $result->fetch_assoc();
         $gamenameo = $conn->real_escape_string($row["Name"]);
-        echo "<div class='gamename'>" . $row["Name"] . "</div>";
+        echo "<div class='gamename' data-slug='" . $row["slug"] . "'>" . $row["Name"] . "</div>";
         echo "<div id='info'>".$row["Genre"]."</div>";
         $tags = array();
         if ($row["spacetag"] == 1) {
@@ -266,7 +266,6 @@ session_start();
     </script>
     <script src="../scripts/plugins/tab-lists.js"></script>
     <script src="../scripts/plugins/navigation.js"></script>
-    <script src="../scripts/plugins/nav-games.js"></script>
     <script src="../scripts/plugins.js"></script>
     <script src="../scripts/main.js"></script>
 

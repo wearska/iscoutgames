@@ -23,7 +23,7 @@ if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 };
 
-$sql = "SELECT ID, Name, Genre, Link, Score FROM game WHERE approvedstate=1 ";
+$sql = "SELECT ID, Name, slug, Genre, Link, Score FROM game WHERE approvedstate=1 ";
 $result = $conn->query($sql);
 
 
@@ -32,8 +32,9 @@ if ($result->num_rows > 0) {?>
         <?php
         // output data of each row
         while($row = $result->fetch_assoc()) {
+            echo get_base_uri();
             echo "<tr>"
-                       ."<td id='gamelink'>"."<a href='" . get_base_uri() ."templates/single-game.php?ID=$row[ID]'>".$row["Name"]."</a>"."</td>"
+                       ."<td>"."<a href='" . get_base_uri() ."templates/single-game.php?ID=$row[ID]'  data-slug='" .$row["slug"]. "'>".$row["Name"]."</a>"."</td>"
                        ."<td>" . $row["Genre"]. "</td>"
                        ."<td>" . $row["Score"]. "</td>"
                        ."<td>" . "<a href=$row[Link] target=_blank>" . $row["Link"] . "</a>" . "</td>"
