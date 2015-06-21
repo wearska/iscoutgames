@@ -10,7 +10,6 @@
     // Listen for the jQuery ready event on the document
     $(function() {
         var $mainView = $("#view");
-        var $holder = $("<div class='holder'></div>");
         //The DOM is ready!
 
         function init() {
@@ -19,7 +18,6 @@
 
         function ajaxLoad(html) {
             // Do this after ajax loads.
-            $mainView.append($holder);
         };
 
         function loadView(href) {
@@ -41,7 +39,7 @@
                 href = $this.attr("href"),
                 dataSlug = $this.attr("data-slug");
             if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
-                $holder.load(href + " #view>*", ajaxLoad);
+                $mainView.load(href + " #view>*", ajaxLoad);
                 window.location.hash =  dataSlug;
             }
             e.preventDefault();
