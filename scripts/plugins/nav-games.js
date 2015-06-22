@@ -44,8 +44,7 @@
             }
             e.preventDefault();
         });
-
-    });
+});
 
     // The rest of code goes here!
 

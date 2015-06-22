@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ('../functions/base.php');
 /**
  * The single game teplate
  *
@@ -93,18 +94,7 @@ session_start();
     <div id="game">
 
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "password";
-        $dbname = "games";
         $game_id = $_GET['ID'];
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-        }
 
         $sql = "SELECT * FROM `game` WHERE `ID`= '$game_id'";
         $result = $conn->query($sql);
@@ -219,30 +209,23 @@ session_start();
 
         echo "<div id='tags'>". $tags2 . "</div>";
 
-        $conn->close();
         ?>
-
         <?php
-        if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])) {
-        $conn = new mysqli($servername, $username, $password, 'users');
-        // Check connection
-        if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        }
-        $username = $conn->real_escape_string($_SESSION['Username']);
-        $sql = "SELECT games FROM users WHERE Username = '$username'";
-        $result = $conn->query($sql);
-        while ($row = $result->fetch_assoc()) {
-        $usergames[] = $row['games'];
-        };
-        $usergamesstring = implode (" ", $usergames);
+        if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])) {        
+            $username = $conn->real_escape_string($_SESSION['Username']);
+            $sql = "SELECT games FROM users WHERE Username = '$username'";
+            $result = $conn->query($sql);
+            while ($row = $result->fetch_assoc()) {
+            $usergames[] = $row['games'];
+            };
+            $usergamesstring = implode (" ", $usergames);
                             if (strpos($usergamesstring, $gamenameo) !== false) {
-                                echo '<form id="gameform" action="/functions/removefromlibrary.php?ID='.$game_id.'" method="post">'.'<input type="submit" value="Remove from Library">'.'</form>';
+                                echo '<form id="gameform" action="functions/removefromlibrary.php?ID='.$game_id.'" method="post">'.'<input type="submit" value="Remove from Library">'.'</form>';
                             } else {
-                                echo '<form id="gameform" action="/functions/addtolibrary.php?ID='.$game_id.'" method="post">'.'<input type="submit" value="Add to Library">'.'</form>'; }
+                                echo '<form id="gameform" action="functions/addtolibrary.php?ID='.$game_id.'" method="post">'.'<input type="submit" value="Add to Library">'.'</form>'; }        
         } else {
-        echo '<form>'.'<input type="submit" class="disabledsubmit" value="Add to Library" disabled>'.'</form>';
-        };
+            echo '<form>'.'<input type="submit" class="disabledsubmit" value="Add to Library" disabled>'.'</form>';
+            };
         ?>
     </div>
 

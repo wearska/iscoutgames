@@ -32,7 +32,6 @@ if ($result->num_rows > 0) {?>
         <?php
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo get_base_uri();
             echo "<tr>"
                        ."<td>"."<a href='" . get_base_uri() ."templates/single-game.php?ID=$row[ID]'  data-slug='" .$row["slug"]. "'>".$row["Name"]."</a>"."</td>"
                        ."<td>" . $row["Genre"]. "</td>"

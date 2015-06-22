@@ -1,23 +1,18 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "games";
+include "base.php";
+include "../config.php";
 
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-//$name = $_POST['gamename'];
 $name = $conn->real_escape_string($_POST['gamename']);
 $genre = $_POST['genre'];
 $subgenre = $_POST['subgenre'];
 $description = $conn->real_escape_string($_POST['description']);
 $link = $conn->real_escape_string($_POST['link']);
+
+
+    $slug = strtolower($name);
+    $slug = preg_replace('/[^a-z0-9 -]+/', '', $slug);
+    $slug = str_replace(' ', '-', $slug);
+    $slug = trim($slug, '-');
 
 if(isset($_POST['space'])){
     $space = $_POST['space'];
@@ -125,10 +120,10 @@ else{
 };
 
 if(isset($_POST['linearlevel'])){
-    $sandbox = $_POST['linearlevel'];
+    $linearlevel = $_POST['linearlevel'];
 }
 else{
-    $sandbox= 0;
+    $linearlevel= 0;
 };
 
 if(isset($_POST['SP'])){
@@ -196,7 +191,7 @@ else{
 
 
 
-$sql = "INSERT INTO `games`.`game` (`ID`, `Name`, `Genre`, `Subgenre`, `Score`, `spacetag`, `futuristictag`, `medivaltag`, `fantasytag`, `scifitag`, `horrortag`, `historicaltag`, `moderndaystag`, `realistictag`, `cartoontag`, `artistictag`, `animetag`, `steampunktag`, `8bit`, `openworldtag`, `linearleveltag`, `sponlytag`, `mptag`, `localmptag`, `coopcamptag`, `coopconttag`, `couchcooptag`, `splitscreentag`, `tvttag`, `pvptag`, `Description`, `link`) VALUES (NULL, '$name', '$genre', '$subgenre', '', '$space', '$futuristic', '$medival', '$fantasy', '$scifi', '$horror', '$historical', '$moderndays', '$realistic', '$cartoon', '$artistic', '$anime', '$steampunk', '$eightbit', '$openworld', '$linearlevel', '$sp', '$mp', '$localmp', '$coopcamp', '$coopcont', '$couchcoop', '$splitscreen', '$tvt', '$pvp', '$description', '$link');";
+$sql = "INSERT INTO `games`.`game` (`ID`, `Name`, `Genre`, `Subgenre`, `Score`, `spacetag`, `futuristictag`, `medivaltag`, `fantasytag`, `scifitag`, `horrortag`, `historicaltag`, `moderndaystag`, `realistictag`, `cartoontag`, `artistictag`, `animetag`, `steampunktag`, `8bit`, `openworldtag`, `linearleveltag`, `sponlytag`, `mptag`, `localmptag`, `coopcamptag`, `coopconttag`, `couchcooptag`, `splitscreentag`, `tvttag`, `pvptag`, `Description`, `link`, `slug`) VALUES (NULL, '$name', '$genre', '$subgenre', '', '$space', '$futuristic', '$medival', '$fantasy', '$scifi', '$horror', '$historical', '$moderndays', '$realistic', '$cartoon', '$artistic', '$anime', '$steampunk', '$eightbit', '$openworld', '$linearlevel', '$sp', '$mp', '$localmp', '$coopcamp', '$coopcont', '$couchcoop', '$splitscreen', '$tvt', '$pvp', '$description', '$link', '$slug');";
 
 if ($conn->query($sql) === TRUE) {
     echo "Succes";

@@ -10,8 +10,6 @@ include (ABSPATH . FUNC . 'base.php');
 
     <form id="gameform" action="<?php echo get_base_uri() . 'functions/submitbe.php' ?>" method="post">
         <div id="gamedef">
-            Name
-            <input type="text" name="gamename" placeholder="Name of the game">
             <div class="row">
                 <div class="input-field floating-label col s6">
                     <input type="text"  name="gamename" placeholder="" id="gamename">
@@ -59,9 +57,7 @@ include (ABSPATH . FUNC . 'base.php');
                 <option value="Pointandclick">Point and Click</option>
             </select>
             <br>
-            <br> Webpage
-            <input type="text" name="link" placeholder="Link to Game Page">
-            <br>
+
         </div>
         Please be as accurate as possible. Use the official name of the game and double-check the genre and sub-genre with/on a trustworthy source. Thank you!
 
@@ -88,6 +84,7 @@ include (ABSPATH . FUNC . 'base.php');
                 <input type="checkbox" name="moderndays" value="1"> Modern Days
                 <br>
             </div>
+            <br>
             <div class="tagclass">
                 <h5> Art Style </h5>
                 <input type="checkbox" name="realistic" value="1"> Realistic
@@ -102,8 +99,6 @@ include (ABSPATH . FUNC . 'base.php');
                 <br>
                 <input type="checkbox" name="8bit" value="1"> 8Bit
                 <br>
-                <br>
-                <br>
             </div>
             <div class="tagclass">
                 <h5>World Design</h5>
@@ -111,15 +106,8 @@ include (ABSPATH . FUNC . 'base.php');
                 <br>
                 <input type="checkbox" name="linearlevel" value="1"> Linear Level
                 <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
             </div>
-            <hr>
+                <br>
             <div id="" class="tagclass">
                 <h5> Multiplayer Component </h5>
                 <input type="checkbox" name="SP" value="1"> Single Player Only</li>

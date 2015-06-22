@@ -1,22 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "users";
 
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+include "base.php";
 
 $username = $conn->real_escape_string($_POST['username']);
 $password = $conn->real_escape_string($_POST['password']);
 
 
-$sql = "INSERT INTO `users`.`users` (`Username`, `Password`) VALUES ('$username', '$password');";
+$sql = "INSERT INTO `games`.`users` (`Username`, `Password`) VALUES ('$username', '$password');";
 
 if ($conn->query($sql) === TRUE) {
     echo "Succes";
