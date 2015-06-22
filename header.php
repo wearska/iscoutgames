@@ -40,6 +40,25 @@
                      <h1 class="app-view-title">Google Design</h1>
                  </div>
                  <div id="app-bar-main" class="paper">
+                     <span class="app-title">iscoutgames.com</span>
+                     <div class="app-actions">
+                         <div class="app-supplemental-actions">
+                             <i class="material-icons">search</i>
+                             <i class="material-icons">favorite</i>
+                         </div>
+                         <div class="app-menu">
+                             <i class="material-icons">more_vert</i>
+                             <ul id="menu" class="lines-list hidden">
+                                 <?php if(!empty($_SESSION[ 'LoggedIn']) && !empty($_SESSION[ 'Username'])) { ?>
+                                 <li class="" id="account" data-title="Log In" data-float-link="account">Account</li>
+                                 <li class="" id="logout" data-title="Sign Up" data-float-link="logout">Log out</li>
+                                 <?php } else { ?>
+                                 <li class="" id="login" data-title="Log In" data-float-link="login">Log In</li>
+                                 <li class="" id="signup" data-title="Sign Up" data-float-link="signup">Sign Up</li>
+                                 <?php } ?>
+                             </ul>
+                         </div>
+                     </div>
                      <div class="app-navigation">
                          <div class="nav-toggle">
                              <i class="material-icons">menu</i>
@@ -61,25 +80,6 @@
                                  <div class="indicator"></div>
                              </ul>
                          </nav>
-                     </div>
-                     <span class="app-title">iscoutgames.com</span>
-                     <div class="app-actions">
-                         <div class="app-supplemental-actions">
-                             <i class="material-icons">search</i>
-                             <i class="material-icons">favorite</i>
-                         </div>
-                         <div class="app-menu">
-                             <i class="material-icons">more_vert</i>
-                             <ul id="menu" class="lines-list hidden">
-                                 <?php if(!empty($_SESSION[ 'LoggedIn']) && !empty($_SESSION[ 'Username'])) { ?>
-                                 <li class="" id="account" data-title="Log In" data-float-link="account">Account</li>
-                                 <li class="" id="logout" data-title="Sign Up" data-float-link="logout">Log out</li>
-                                 <?php } else { ?>
-                                 <li class="" id="login" data-title="Log In" data-float-link="login">Log In</li>
-                                 <li class="" id="signup" data-title="Sign Up" data-float-link="signup">Sign Up</li>
-                                 <?php } ?>
-                             </ul>
-                         </div>
                      </div>
                  </div>
              </div>

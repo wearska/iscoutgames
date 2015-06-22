@@ -13,11 +13,12 @@
     $(function() {
 
 
-        var href = ($(location).attr('href') + ''),
-            origin = ($(location).attr('origin') + '/iscoutgames/'),
-            viewName = href.replace(origin, "");
-        (viewName == '') ? viewName = 'home': viewName = viewName;
+        var path = ($(location).attr('pathname').substring(1) + ''),
+            root = 'iscoutgames/',
+            viewName = (root !== '') ? path.replace(root, "") : path ;
+            (viewName === '') ? viewName = 'home': viewName = viewName;
         var $activeTab = $('#' + viewName + '');
+        //console.log(viewName);
         $activeTab.addClass('active');
         $("ul.nav-list").tabs();
 

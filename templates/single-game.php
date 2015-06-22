@@ -94,13 +94,15 @@ include ('../functions/base.php');
     <div id="game">
 
         <?php
-        $game_id = $_GET['ID'];
+        $game_slug = $_GET['hash'];
+        //$game_id = $_GET['ID']; //need to get this through an sql query where `slug` = hash
 
-        $sql = "SELECT * FROM `game` WHERE `ID`= '$game_id'";
+        $sql = "SELECT * FROM `game` WHERE `slug`= '$game_slug'";
         $result = $conn->query($sql);
 
         // output data of each row
         $row = $result->fetch_assoc();
+        $game_id = $row["ID"];
         $gamenameo = $conn->real_escape_string($row["Name"]);
         echo "<div class='gamename' data-slug='" . $row["slug"] . "'>" . $row["Name"] . "</div>";
         echo "<div id='info'>".$row["Genre"]."</div>";

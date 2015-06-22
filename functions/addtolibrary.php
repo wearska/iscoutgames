@@ -38,7 +38,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 };
 
-{
+include '../config.php';
 // To redirect form on a particular page
-//header("Location:/gamedetails.php?ID=$game_id");
-}
+echo "<meta http-equiv='refresh' content='1;home'>";

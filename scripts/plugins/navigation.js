@@ -21,9 +21,6 @@
             i = 1;
 
         $appNav.addClass("app-bar-nav");
-        $newAppNav.addClass("app-bar-nav");
-        $newAppNav.appendTo($appNav.parent());
-        $appNav.remove();
 
         var $mainView = $("#view");
         //The DOM is ready!
@@ -38,6 +35,16 @@
 
         function loadView(href) {
             $mainView.load(href + " main>*", ajaxLoad);
+        };
+
+        function loadHash(e) {
+            //console.log(e);
+            console.log("hash");
+            var hash = window.location.hash.substr(1);
+            if (hash) {
+                var url = 'templates/single-game.php?hash=' + hash;
+                $mainView.load(url + " #view>*");
+            }
         };
 
         function updateNav() {
@@ -65,12 +72,20 @@
         init();
 
         $(window).on("popstate", function(e) {
-            if (e.originalEvent.state !== null) {
-                var href = ($(location).attr('href') + ''),
-                    origin = ($(location).attr('origin') + '/iscoutgames/'),
-                    viewName = href.replace(origin, "");
-                href = viewName;
-                loadView(href);
+            if (window.location.hash) {
+                $(window).trigger("hashchange");
+            } else {
+                if (e.originalEvent.state !== null) {
+                    console.log("pop");
+                    var path = ($(location).attr('pathname').substring(1) + ''),
+                        root = 'iscoutgames/',
+                        viewName = (root !== '') ? path.replace(root, "") : path;
+                    (viewName === '') ? viewName = 'home': viewName = viewName;
+                    var $activeTab = $('#' + viewName + '');
+                    $appNav.find('.tab').removeClass("active");
+                    $activeTab.addClass("active");
+                    loadView(viewName);
+                }
             }
         });
 
@@ -84,6 +99,7 @@
             }
         });
         $window.on("scroll", updateNav);
+        $window.on('hashchange load', loadHash);
 
     });
 

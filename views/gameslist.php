@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {?>
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "<tr>"
-                       ."<td>"."<a href='" . get_base_uri() ."templates/single-game.php?ID=$row[ID]'  data-slug='" .$row["slug"]. "'>".$row["Name"]."</a>"."</td>"
+                       ."<td>"."<a href='" . get_base_uri() ."templates/single-game.php?hash=" . $row["slug"] . "'  data-slug='" .$row["slug"]. "'>".$row["Name"]."</a>"."</td>"
                        ."<td>" . $row["Genre"]. "</td>"
                        ."<td>" . $row["Score"]. "</td>"
                        ."<td>" . "<a href=$row[Link] target=_blank>" . $row["Link"] . "</a>" . "</td>"

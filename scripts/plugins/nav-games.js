@@ -27,13 +27,6 @@
 
         init();
 
-        $(window).on("hashchange", function(e) {
-            if (e.originalEvent.state !== null) {
-                var hash;
-                //(window.location.hash) ? (hash = window.location.hash.substring(1), alert(hash)) : alert("no hash");
-            }
-        });
-
         $(document).on("click", "a", function(e) {
             var $this = $(this),
                 href = $this.attr("href"),
